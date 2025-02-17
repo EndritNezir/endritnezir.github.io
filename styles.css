@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black; 
+    color: white; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    width: 40%;
+    padding: 40px;
+    text-align: center;
+    background-color: #111; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 32px;
+    margin: 10px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.right-section {
+    width: 60%;
+    padding: 40px;
+    background-color: black;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #222;
+    color: white;
+}
+
+.interactive-link {
+    color: #00bfff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.interactive-link:hover {
+    color: #1e90ff;
+}
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-box {
+    width: 300px;
+    height: 170px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.project-box img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.project p {
+    margin-top: 5px;
+}
+
+.project a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    color: #1e90ff;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section {
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .social-links a {
+        font-size: 24px;
+    }
+
+    .right-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-box {
+        width: 90%;
+        height: auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
