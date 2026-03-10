@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Market Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-area">
+        <div class="brand-icon">↗</div>
+        <div>
+          <p class="brand-kicker">Portfolio Project</p>
+          <h1>MarketBoard</h1>
+        </div>
+      </div>
+
+      <div class="topbar-badge">
+        <span class="badge-dot"></span>
+        Live quotes
+      </div>
+    </header>
+
+    <section class="hero-card">
+      <div class="hero-copy">
+        <p class="eyebrow">Equity Overview</p>
+        <h2>Track price action with a cleaner, more professional market dashboard.</h2>
+        <p class="hero-text">
+          Search symbols, inspect daily price stats, and review chart movement in a modern interface designed for presentation.
+        </p>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric-box">
+          <span>Market Focus</span>
+          <strong id="companySymbol">AAPL</strong>
+        </div>
+        <div class="metric-box">
+          <span>Current Price</span>
+          <strong id="currentPrice">$--</strong>
+        </div>
+        <div class="metric-box">
+          <span>Session Move</span>
+          <strong id="changeBadge" class="change-text neutral">--</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-card">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Search</p>
+          <h3>Find a stock</h3>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by company name or ticker..."
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div class="result-head">
+        <span>Symbol</span>
+        <span>Company</span>
+      </div>
+
+      <section id="searchResults" class="search-results"></section>
+    </section>
+
+    <section class="main-grid">
+      <div class="left-stack">
+        <div class="info-card">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Market Snapshot</p>
+              <h3>Daily stats</h3>
+            </div>
+            <span class="exchange-pill">NASDAQ</span>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-tile">
+              <span>High</span>
+              <strong id="highPrice">--</strong>
+            </div>
+            <div class="stat-tile">
+              <span>Low</span>
+              <strong id="lowPrice">--</strong>
+            </div>
+            <div class="stat-tile">
+              <span>Open</span>
+              <strong id="openPrice">--</strong>
+            </div>
+            <div class="stat-tile">
+              <span>Prev Close</span>
+              <strong id="prevClose">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Quick Access</p>
+              <h3>Popular symbols</h3>
+            </div>
+          </div>
+
+          <div class="quick-buttons">
+            <button class="symbol-btn" data-symbol="AAPL">AAPL</button>
+            <button class="symbol-btn" data-symbol="TSLA">TSLA</button>
+            <button class="symbol-btn" data-symbol="NVDA">NVDA</button>
+            <button class="symbol-btn" data-symbol="MSFT">MSFT</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Performance</p>
+            <h3>30-Day trend</h3>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="stockChart"></canvas>
+          <div id="chartMessage" class="chart-message"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
